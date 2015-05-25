@@ -15,30 +15,30 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 //------------------------------------------------------------------------------------------------------------
-//scheduleANotification - The notification will be fired after 5 min
+// scheduleANotification - The notification will be fired after 5 min
 //------------------------------------------------------------------------------------------------------------
 
 - (IBAction)scheduleANotification:(id)sender {
-    
-    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-    localNotification.alertBody = [NSString stringWithFormat:@"Alert Fired at %@", [NSDate date]];
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
-    localNotification.applicationIconBadgeNumber = 1;
-    localNotification.category = @"ACTIONABLE";
-    
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-}
+  UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+  localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+  localNotification.alertBody =
+      [NSString stringWithFormat:@"Alert Fired at %@", [NSDate date]];
+  localNotification.soundName = UILocalNotificationDefaultSoundName;
+  localNotification.applicationIconBadgeNumber = 1;
+  localNotification.category = @"ACTIONABLE";
 
+  [[UIApplication sharedApplication]
+      scheduleLocalNotification:localNotification];
+}
 
 @end
